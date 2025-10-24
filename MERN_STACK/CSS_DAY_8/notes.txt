@@ -1,0 +1,17 @@
+CSS
+
+JAVASCRIPT METHOD:
+           *shift() => front => remove element
+           *unshift() => "   => add element
+
+           *pop() => back => remove element
+           *push() => "   => add element
+
+ var array = ["1","2","3","4","5"]
+console.log(array.shift("one"));
+console.log(array.unshift());
+
+// shift , unshift works on front
+// push, pop works on back 
+
+

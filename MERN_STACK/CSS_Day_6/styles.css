@@ -1,0 +1,25 @@
+/* examples for declaration , block, ruleset, selector */
+/* ex for class (.) use dot for call class element */
+.red{
+    color: red;      
+}
+
+/* ex for id (#) use hash for call id element */
+#hea1{
+    color: blue;      
+}
+
+#para1{
+    color: blue;      
+}
+
+.green{
+    color: green;      
+}   
+
+/* ex for element use element name for call element */
+.redh1, #para1  {
+    font-size: 40px;
+    font-style: italic;      
+}
+

@@ -1,0 +1,23 @@
+/* Description: Example of using the :hover pseudo-class to change the color of a heading when hovered over */
+
+h1:hover{
+    color: cadetblue;
+}
+
+label:hover{
+    color: coral;
+}
+
+a:link, a:hover, a:visited{
+    text-decoration: none;
+    color: greenyellow;
+}
+
+input:focus{
+    background-color: rgb(61, 221, 235);
+}
+
+button:active{
+    background-color: blue;
+    color: white;
+}

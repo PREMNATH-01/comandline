@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    //global scope
+    // var is always global scope
+   // var a = 100;
+   //let a = 200;
+   const a = 300;
+    {console.log(a)};
+    console.log(a);
+
+    //block scope
+    //contain only{}
+    // let and const are block scope
+    {let a = 100
+        console.log(a)}
+
+    //Functional scope
+    function scope(){
+        let car = "volvo"
+        return car;
+    }    
+    
+    console.log(scope());
+   </script> 
+</body>
+</html>

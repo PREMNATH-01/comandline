@@ -1,0 +1,38 @@
+body {
+     width: 100%;
+}
+
+#parent{
+    width: 75%;
+    border: 2px solid black;
+}
+
+p{
+    width: 80ch; /* ch unit based on the width of the "0" character in the current font */
+}
+
+#red{
+    width: 50%;
+    background-color: red;
+}
+
+#blue{
+    width: 50vw;
+    background-color: blue;
+}
+
+#green{
+    width: 10rem;
+    background-color: green;
+}
+
+#yellow{
+    width: 160px;
+    background-color: yellow;
+    color: black;
+}
+
+div{
+    margin: 10px;
+    color: white;
+}

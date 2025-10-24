@@ -1,0 +1,36 @@
+section{
+    display: flex; /* Establishes a flex container */
+    /*flex-direction: column; /* Stacks children vertically */
+    /*flex-direction: column-reverse; /* Stacks children vertically in reverse order */
+    /*flex-direction: row; /* Stacks children horizontally */
+    flex-direction: row-reverse; /* Stacks children horizontally in reverse order */
+    /*justify-content: flex-end; /* Aligns children to the end of the main axis */
+    justify-content: center; /* Centers children along the main axis */
+    /*align-items: center; /* Centers children along the cross axis */
+    align-items: flex-end; /* Aligns children to the end of the cross axis */ 
+    flex-wrap: wrap; /* Allows children to wrap onto multiple lines */
+    height: 90vh;
+    border: 2px dotted black;
+    gap: 10px;
+}
+
+.red{
+    height: 125px;
+    background-color: red;
+}
+.blue{
+    height: 175px;
+    background-color: blue;
+}
+.green{
+    height: 75px;
+    background-color: green;
+}
+
+div{
+    border: 3px solid black;
+    padding: 0.5rem;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}

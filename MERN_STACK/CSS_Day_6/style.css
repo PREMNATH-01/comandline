@@ -1,0 +1,20 @@
+/* Styles for the header element " SELECTOR" */
+
+h1{
+    font-family: Arial, sans-serif;
+    background-color: #e30f0f;
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    font-family: 'Times New Roman', serif;
+    background-color: #8282f5af;
+    margin: 10px;
+    padding: 10px;
+}
+body{
+    background-color: #d654b6;
+    margin: 20px;
+    padding: 20px;
+}   

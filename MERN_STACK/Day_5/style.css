@@ -1,0 +1,12 @@
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    color: white;
+    font-size: 2em;
+  }

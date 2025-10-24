@@ -1,0 +1,30 @@
+DAY_6
+   * SLICE()
+   * What is CSS?  CSS => Cascading Style Sheet
+   * CSS selectors (Class vs id)
+   * Display Property: inline, block
+   * intro to pseudo-classes(link, visited, hover, active)
+
+ What is slice()?
+   * In javascript, the slice() method is used to copy a portion of an array and return it as a new array. 
+     whithout changing original one.
+
+Syntax for slice => array.slice(start, end);
+
+example:
+var array = ["birds", "men", "hen","fish","dog"];
+array.slice(1, 3);
+
+output => ["men", "hen"] // it starts index 1 (men)
+// stops before index 3 (so, it does not include "fish")
+
+example for get last element specific value using negative numbers.
+
+array.slice(-2);
+output => ["fish","dog"]
+
+array.slice(-1);
+output => ["dog"]
+
+array.slice(-4, -2);
+output => ["birds", "men", "hen","fish"]

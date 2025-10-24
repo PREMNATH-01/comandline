@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottery Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Lottery Entry Form</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="18" required><br><br>
+
+        <label for="numbers">Choose your lottery numbers (1-50):</label><br>
+        <input type="checkbox" name="numbers" value="1">1
+        <input type="checkbox" name="numbers" value="2">2
+        <input type="checkbox" name="numbers" value="3">3
+        <input type="checkbox" name="numbers" value="4">4
+        <input type="checkbox" name="numbers" value="5">5
+        <input type="checkbox" name="numbers" value="6">6
+        <input type="checkbox" name="numbers" value="7">7
+        <input type="checkbox" name="numbers" value="8">8
+        <input type="checkbox" name="numbers" value="9">9
+        <input type="checkbox" name="numbers" value="10">10<br>
+        <!-- Add more checkboxes as needed up to 50 -->
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

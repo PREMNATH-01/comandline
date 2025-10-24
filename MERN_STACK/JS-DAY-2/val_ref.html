@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //copy by value
+
+        //call by value
+        //primitive data types num, str, boolean
+        var a = 5;
+        var b = a;
+        let c = a;
+        console.log(a,b,c);
+
+        //copy by ref call by reference
+        //composite datatypes arrays, objects
+        //array=> index, value
+        var arr =[1,2,3,4]
+        //console.log(arr);
+        arr[2] ="prem";
+        var arr1 =arr;
+        console.log(arr1,arr);
+        
+        //obj=> key, value
+        var obj =[{
+            name:"prem",
+            place:"svg"
+        }]
+        //console.log(obj);
+        obj.name = "amar";
+        console.log(obj);
+
+    </script>
+</body>
+</html>

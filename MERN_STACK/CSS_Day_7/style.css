@@ -1,0 +1,12 @@
+p{
+    background-color: lightblue;
+    padding: 10px; /* padding inside the paragraph */
+    border: 2px solid black; /* border around the paragraph "solid, doubled, dotted"*/
+    margin: 24px; /* margin around the paragraph */
+    text-align: center; /* center the text */
+    font-family: Arial, sans-serif; /* font style */
+    font-size: 20px; /* font size */
+    color: darkorange; /* text color */
+
+
+}

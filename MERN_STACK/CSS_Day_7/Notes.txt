@@ -1,0 +1,10 @@
+DAY - 7
+CSS
+
+CSS POSITION: (used for create live chat icon)
+THERE ARE 5 POSITIONS
+      *STATIC 
+      *FIXED
+      *RELATIVE
+      *STICKY
+      *ABSOLUTE (used for popup offers)

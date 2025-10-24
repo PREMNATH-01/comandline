@@ -1,0 +1,11 @@
+TODAY TOPICS
+      * HTML
+      * METHODS
+      * SPLIT
+      => split converts a strings to array of substrings
+      for ex,
+         a = ["1", "2","3"] => array
+         b = "1,2,3" => strings
+      using split()
+         b comes like a.
+         
