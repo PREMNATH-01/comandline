@@ -1,5 +1,9 @@
 p{
     position: static; /* fixed to the viewport */
+    /* position: relative;  relative to its normal position */
+    /*position: fixed;  fixed to the viewport */
+    /* position: sticky;  sticks to the viewport when you scroll */
+    /* position: absolute;  relative to the nearest positioned ancestor */
     font-size: 1.75rem;
     margin: 1.5rem;
     padding: 1rem;
