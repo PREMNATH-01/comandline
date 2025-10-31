@@ -1,0 +1,25 @@
+body{
+    background-color: black;
+}
+
+.header{
+    background-color: chocolate;
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.img-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.img-item{
+    margin: 0px;
+}
