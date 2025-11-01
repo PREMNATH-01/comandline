@@ -1,0 +1,105 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.header{
+    background-color: #ffcc00;
+    color: black;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header h1{
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.party-section{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.chef-task,
+.Delivery-task,
+.Decor-task{
+    border-radius: 8px;
+    padding: 20px;
+    width: 80%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.chef-task{
+    background-color: #ffe0b3;
+}
+.Delivery-task{
+    background-color: #b3e0ff;
+}
+.Decor-task{
+    background-color: #d1b3ff;
+}
+
+
+.pizza-flex-container,
+.delivery-flex-container,
+.decor-flex-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.pizza-card,
+.delivery-card,
+.decor-card{
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.pizza-card,
+.delivery-card,
+.decor-card{
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #ff5722;
+}
+
+.pizza-card{
+    color: #ff5722;
+}
+.delivery-card i{
+    color: #4caf50;
+}
+.decor-card i{
+    color: #9c27b0;
+}
+.delivery-card{
+    color: #4caf50;
+
+}
+
+h2{
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    text-align: center;
+    color: white;
+}
