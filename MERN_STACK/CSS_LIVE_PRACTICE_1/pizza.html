@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PIZZA PARTY PLANNER</title>
 
+    <!-- icon linked-->
+    <link rel="icon" href="pizza.png" type="image/png">
+
     <!-- css linked-->
     <link rel="stylesheet" href="pizza.css">
 
@@ -13,8 +16,18 @@
 </head>
 <body>
    <header class="header">
+    <i class="fa fa-bars menu-icon" aria-hidden="true"><a href="#">Menu</a></i>
+    <div class="header-content">
        <h1>PIZZA PARTY PLANNER</h1>
-         <p>Organized by Akshu, Prem, Amar</p>
+       <p>Organized by Akshu, Prem, Amar</p> 
+    </div>
+      <div class="header-button">
+        <nav>
+        <button><a href="#">Home</a></button>
+         
+         <button><a href="#">Contact</a></button>
+        </nav>
+    </div> 
    </header>
    <section class="party-section">
 
@@ -42,18 +55,23 @@
         <h2>Amar's Delivery Options</h2>    
     <div class="delivery-flex-container">   
         <div class="delivey-card">
-            <i class="fas fa-truck delivery-icon"></i>
-            <h2 class="delivery-type">Standard Delivery</h2>
-            <p class="delivery-description">Delivered within 45 minutes</p>
+            <i class="fas fa-computer"></i>
+            <h3>Track Delivery</h3>
+            <p class="delivery-description">Real-time tracking of your order</p>
         </div>
         <div class="delivey-card">
             <i class="fas fa-shipping-fast delivery-icon"></i>
-            <h2 class="delivery-type">Express Delivery</h2>
+            <h3 class="delivery-type">Express Delivery</h3>
             <p class="delivery-description">Delivered within 20 minutes</p>
         </div>
         <div class="delivey-card">
+            <i class="fa fa-whiskey-glass"></i>
+            <h3>Contactless Delivery</h3>
+            <p class="delivery-description">Safe and hygienic delivery option</p>
+        </div>
+        <div class="delivey-card">
             <i class="fas fa-store delivery-icon"></i>
-            <h2 class="delivery-type">Pickup</h2>
+            <h3 class="delivery-type">Pickup</h3>
             <p class="delivery-description">Pick up from the nearest store</p>
         </div>
     </div>    
@@ -64,19 +82,22 @@
         <h2>Akshu's Decoration Ideas</h2>
     <div class="decor-flex-container">
         <div class="decor-card">
-            <i class="fas fa-balloon decor-icon"></i>
-            <h2 class="decor-type">Balloons</h2>
+            <i class="fas fa-gift"></i>
+            <h3 class="decor-type">Gifts</h3>
             <p class="decor-description">Colorful balloons to brighten up the party</p>
         </div>
         <div class="decor-card">
-            <i class="fas fa-streamers decor-icon"></i>
-            <h2 class="decor-type">Streamers</h2>
+            <i class="fas fa-lightbulb"></i>
+            <h3 class="decor-type">Bulb</h3>
             <p class="decor-description">Vibrant streamers for a festive look</p>
         </div>
         <div class="decor-card">
             <i class="fas fa-cake decor-icon"></i>
-            <h2 class="decor-type">Cake Stand</h2>
+            <h3 class="decor-type">Cake Stand</h3>
             <p class="decor-description">Elegant cake stand for the birthday cake</p>
+        </div>
+        <div class="decor-card"><i class="fa fa-heart"></i><h3>Ballons</h3>
+            <p class="decor-description">Heart-shaped balloons for kids</p>
         </div>
     </div>
     </div>    
