@@ -32,6 +32,12 @@ body{
     margin: 5px 0 0;
 }
 
+.header-menu{
+    position: absolute;
+    left: 20px;
+    top: 10px;
+}
+
 /* the buttons container (buttom right)*/
 .header-button{
     position: absolute;
