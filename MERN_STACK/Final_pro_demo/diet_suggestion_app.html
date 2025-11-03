@@ -1,0 +1,987 @@
+head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriPlan - Diet Suggestion App</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="/_sdk/data_sdk.js"></script><!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"><!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"><!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100%;
+            margin: 0;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        .app-container {
+            min-height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .dashboard-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .meal-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #667eea;
+        }
+
+        .btn-primary-custom {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 25px;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .form-control {
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            padding: 0.75rem 1rem;
+        }
+
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+
+        .progress-custom {
+            height: 20px;
+            border-radius: 10px;
+            background-color: #e9ecef;
+        }
+
+        .progress-bar-custom {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 10px;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 1rem 0;
+        }
+
+        .loading-spinner {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .food-suggestion {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .nutrition-badge {
+            background: #667eea;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin: 0.25rem;
+            display: inline-block;
+        }
+
+        .tab-content {
+            padding: 2rem 0;
+        }
+
+        .nav-pills .nav-link {
+            border-radius: 25px;
+            margin: 0 0.5rem;
+            font-weight: 500;
+        }
+
+        .nav-pills .nav-link.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="app-container"><!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container"><a class="navbar-brand" href="#" id="appTitle"> <i class="fas fa-leaf text-success me-2"></i>NutriPlan </a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"> <span class="navbar-toggler-icon"></span> </button>
+     <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+       <li class="nav-item"><a class="nav-link" href="#dashboard">Dashboard</a></li>
+       <li class="nav-item"><a class="nav-link" href="#meal-planner">Meal Planner</a></li>
+       <li class="nav-item"><a class="nav-link" href="#nutrition">Nutrition</a></li>
+       <li class="nav-item"><span class="nav-link fw-bold" id="userNameDisplay">John Doe</span></li>
+      </ul>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <section class="hero-section">
+    <div class="container">
+     <h1 class="hero-title" id="heroTitle">Welcome to NutriPlan</h1>
+     <p class="hero-subtitle">Your personalized diet suggestion and nutrition tracking companion</p><button class="btn btn-light btn-lg btn-primary-custom mt-3" onclick="showSection('dashboard')"> <i class="fas fa-chart-line me-2"></i>Get Started </button>
+    </div>
+   </section><!-- Features Section -->
+   <section class="py-5" id="features">
+    <div class="container">
+     <div class="row">
+      <div class="col-md-4 mb-4">
+       <div class="feature-card text-center"><i class="fas fa-utensils feature-icon"></i>
+        <h4>Smart Meal Planning</h4>
+        <p>Get personalized meal suggestions based on your dietary preferences and nutritional goals.</p>
+       </div>
+      </div>
+      <div class="col-md-4 mb-4">
+       <div class="feature-card text-center"><i class="fas fa-chart-pie feature-icon"></i>
+        <h4>Nutrition Tracking</h4>
+        <p>Track your daily nutrition intake with detailed charts and progress monitoring.</p>
+       </div>
+      </div>
+      <div class="col-md-4 mb-4">
+       <div class="feature-card text-center"><i class="fas fa-target feature-icon"></i>
+        <h4>Goal Achievement</h4>
+        <p>Set and achieve your health goals with our intelligent recommendation system.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Dashboard Section -->
+   <section class="py-5 d-none" id="dashboard">
+    <div class="container">
+     <h2 class="text-center mb-5">Your Nutrition Dashboard</h2><!-- Stats Cards -->
+     <div class="row mb-5">
+      <div class="col-md-3 mb-3">
+       <div class="stat-card">
+        <div class="stat-number" id="totalCalories">
+         0
+        </div>
+        <div>
+         Calories Today
+        </div>
+       </div>
+      </div>
+      <div class="col-md-3 mb-3">
+       <div class="stat-card">
+        <div class="stat-number" id="totalProtein">
+         0g
+        </div>
+        <div>
+         Protein
+        </div>
+       </div>
+      </div>
+      <div class="col-md-3 mb-3">
+       <div class="stat-card">
+        <div class="stat-number" id="totalCarbs">
+         0g
+        </div>
+        <div>
+         Carbohydrates
+        </div>
+       </div>
+      </div>
+      <div class="col-md-3 mb-3">
+       <div class="stat-card">
+        <div class="stat-number" id="totalFat">
+         0g
+        </div>
+        <div>
+         Fat
+        </div>
+       </div>
+      </div>
+     </div><!-- Progress Bars -->
+     <div class="dashboard-card">
+      <h5 class="mb-3">Daily Goals Progress</h5>
+      <div class="mb-3">
+       <div class="d-flex justify-content-between mb-1"><span>Calories</span> <span id="calorieProgress">0%</span>
+       </div>
+       <div class="progress progress-custom">
+        <div class="progress-bar progress-bar-custom" id="calorieProgressBar" style="width: 0%"></div>
+       </div>
+      </div>
+      <div class="mb-3">
+       <div class="d-flex justify-content-between mb-1"><span>Protein</span> <span id="proteinProgress">0%</span>
+       </div>
+       <div class="progress progress-custom">
+        <div class="progress-bar progress-bar-custom" id="proteinProgressBar" style="width: 0%"></div>
+       </div>
+      </div>
+     </div><!-- Charts -->
+     <div class="row">
+      <div class="col-md-6">
+       <div class="dashboard-card">
+        <h5 class="mb-3">Nutrition Breakdown</h5>
+        <div class="chart-container">
+         <canvas id="nutritionChart"></canvas>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-6">
+       <div class="dashboard-card">
+        <h5 class="mb-3">Weekly Calorie Intake</h5>
+        <div class="chart-container">
+         <canvas id="weeklyChart"></canvas>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Meal Planner Section -->
+   <section class="py-5 d-none" id="meal-planner">
+    <div class="container">
+     <h2 class="text-center mb-5">Meal Planner &amp; Food Logger</h2><!-- Add Meal Form -->
+     <div class="dashboard-card">
+      <h5 class="mb-3">Log Your Meal</h5>
+      <form id="mealForm">
+       <div class="row">
+        <div class="col-md-6 mb-3"><label class="form-label">Meal Type</label> <select class="form-control" id="mealType" required> <option value="">Select meal type</option> <option value="breakfast">Breakfast</option> <option value="lunch">Lunch</option> <option value="dinner">Dinner</option> <option value="snack">Snack</option> </select>
+        </div>
+        <div class="col-md-6 mb-3"><label class="form-label">Food Name</label> <input type="text" class="form-control" id="foodName" placeholder="e.g., Grilled Chicken Salad" required>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-md-3 mb-3"><label class="form-label">Calories</label> <input type="number" class="form-control" id="calories" placeholder="250" required>
+        </div>
+        <div class="col-md-3 mb-3"><label class="form-label">Protein (g)</label> <input type="number" class="form-control" id="protein" placeholder="25" required>
+        </div>
+        <div class="col-md-3 mb-3"><label class="form-label">Carbs (g)</label> <input type="number" class="form-control" id="carbs" placeholder="15" required>
+        </div>
+        <div class="col-md-3 mb-3"><label class="form-label">Fat (g)</label> <input type="number" class="form-control" id="fat" placeholder="10" required>
+        </div>
+       </div><button type="submit" class="btn btn-primary-custom"> <i class="fas fa-plus me-2"></i>Add Meal </button>
+      </form>
+     </div><!-- Loading Spinner -->
+     <div class="loading-spinner" id="loadingSpinner">
+      <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span>
+      </div>
+      <p class="mt-2">Saving your meal... </p>
+     </div><!-- Today's Meals -->
+     <div class="dashboard-card">
+      <h5 class="mb-3">Today's Meals</h5>
+      <div id="todaysMeals">
+       <p class="text-muted text-center">No meals logged today. Start by adding your first meal!</p>
+      </div>
+     </div><!-- Meal Suggestions -->
+     <div class="dashboard-card">
+      <h5 class="mb-3">Suggested Meals</h5>
+      <div id="mealSuggestions"></div>
+     </div>
+    </div>
+   </section><!-- Nutrition Section -->
+   <section class="py-5 d-none" id="nutrition">
+    <div class="container">
+     <h2 class="text-center mb-5">Nutrition Analysis</h2><!-- Nutrition Tabs -->
+     <ul class="nav nav-pills justify-content-center mb-4">
+      <li class="nav-item"><a class="nav-link active" data-bs-toggle="pill" href="#daily-nutrition">Daily</a></li>
+      <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#weekly-nutrition">Weekly</a></li>
+      <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#monthly-nutrition">Monthly</a></li>
+     </ul>
+     <div class="tab-content"><!-- Daily Nutrition -->
+      <div class="tab-pane fade show active" id="daily-nutrition">
+       <div class="row">
+        <div class="col-md-8">
+         <div class="dashboard-card">
+          <h5 class="mb-3">Daily Nutrition Trends</h5>
+          <div class="chart-container">
+           <canvas id="dailyTrendChart"></canvas>
+          </div>
+         </div>
+        </div>
+        <div class="col-md-4">
+         <div class="dashboard-card">
+          <h5 class="mb-3">Nutrition Goals</h5>
+          <div class="mb-3"><label class="form-label">Daily Calorie Goal</label> <input type="number" class="form-control" id="calorieGoal" placeholder="2000">
+          </div>
+          <div class="mb-3"><label class="form-label">Protein Goal (g)</label> <input type="number" class="form-control" id="proteinGoal" placeholder="150">
+          </div><button class="btn btn-primary-custom" onclick="updateGoals()"> <i class="fas fa-save me-2"></i>Update Goals </button>
+         </div>
+        </div>
+       </div>
+      </div><!-- Weekly Nutrition -->
+      <div class="tab-pane fade" id="weekly-nutrition">
+       <div class="dashboard-card">
+        <h5 class="mb-3">Weekly Nutrition Overview</h5>
+        <div class="chart-container">
+         <canvas id="weeklyNutritionChart"></canvas>
+        </div>
+       </div>
+      </div><!-- Monthly Nutrition -->
+      <div class="tab-pane fade" id="monthly-nutrition">
+       <div class="dashboard-card">
+        <h5 class="mb-3">Monthly Progress</h5>
+        <div class="chart-container">
+         <canvas id="monthlyChart"></canvas>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+  </div><!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+        // Default configuration
+        const defaultConfig = {
+            app_title: "NutriPlan",
+            user_name: "John Doe",
+            daily_calorie_goal: "2000",
+            background_color: "#f8f9fa",
+            surface_color: "#ffffff",
+            text_color: "#333333",
+            primary_action_color: "#667eea",
+            secondary_action_color: "#4facfe",
+            font_family: "Poppins",
+            font_size: 16
+        };
+
+        let config = { ...defaultConfig };
+        let currentMeals = [];
+        let nutritionCharts = {};
+
+        // Data handler for SDK
+        const dataHandler = {
+            onDataChanged(data) {
+                currentMeals = data;
+                updateDashboardStats();
+                renderTodaysMeals();
+                updateCharts();
+            }
+        };
+
+        // Initialize Data SDK
+        async function initializeApp() {
+            if (window.dataSdk) {
+                const initResult = await window.dataSdk.init(dataHandler);
+                if (!initResult.isOk) {
+                    console.error("Failed to initialize data SDK");
+                }
+            }
+            
+            generateMealSuggestions();
+            initializeCharts();
+            showSection('features');
+        }
+
+        // Meal form submission
+        document.getElementById('mealForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            if (currentMeals.length >= 999) {
+                showToast("Maximum limit of 999 meals reached. Please delete some meals first.", "warning");
+                return;
+            }
+
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            loadingSpinner.style.display = 'block';
+
+            const mealData = {
+                id: generateId(),
+                user_id: "user_1",
+                meal_type: document.getElementById('mealType').value,
+                food_name: document.getElementById('foodName').value,
+                calories: parseInt(document.getElementById('calories').value),
+                protein: parseInt(document.getElementById('protein').value),
+                carbs: parseInt(document.getElementById('carbs').value),
+                fat: parseInt(document.getElementById('fat').value),
+                date: new Date().toISOString().split('T')[0],
+                created_at: new Date().toISOString()
+            };
+
+            if (window.dataSdk) {
+                const result = await window.dataSdk.create(mealData);
+                
+                loadingSpinner.style.display = 'none';
+                
+                if (result.isOk) {
+                    document.getElementById('mealForm').reset();
+                    showToast("Meal added successfully!", "success");
+                } else {
+                    showToast("Failed to add meal. Please try again.", "error");
+                }
+            } else {
+                loadingSpinner.style.display = 'none';
+                currentMeals.push(mealData);
+                dataHandler.onDataChanged(currentMeals);
+                document.getElementById('mealForm').reset();
+                showToast("Meal added successfully!", "success");
+            }
+        });
+
+        // Update dashboard statistics
+        function updateDashboardStats() {
+            const today = new Date().toISOString().split('T')[0];
+            const todaysMeals = currentMeals.filter(meal => meal.date === today);
+
+            const totalCalories = todaysMeals.reduce((sum, meal) => sum + meal.calories, 0);
+            const totalProtein = todaysMeals.reduce((sum, meal) => sum + meal.protein, 0);
+            const totalCarbs = todaysMeals.reduce((sum, meal) => sum + meal.carbs, 0);
+            const totalFat = todaysMeals.reduce((sum, meal) => sum + meal.fat, 0);
+
+            document.getElementById('totalCalories').textContent = totalCalories;
+            document.getElementById('totalProtein').textContent = totalProtein + 'g';
+            document.getElementById('totalCarbs').textContent = totalCarbs + 'g';
+            document.getElementById('totalFat').textContent = totalFat + 'g';
+
+            // Update progress bars
+            const calorieGoal = parseInt(config.daily_calorie_goal || defaultConfig.daily_calorie_goal);
+            const proteinGoal = 150; // Default protein goal
+
+            const caloriePercent = Math.min((totalCalories / calorieGoal) * 100, 100);
+            const proteinPercent = Math.min((totalProtein / proteinGoal) * 100, 100);
+
+            document.getElementById('calorieProgress').textContent = Math.round(caloriePercent) + '%';
+            document.getElementById('calorieProgressBar').style.width = caloriePercent + '%';
+            document.getElementById('proteinProgress').textContent = Math.round(proteinPercent) + '%';
+            document.getElementById('proteinProgressBar').style.width = proteinPercent + '%';
+        }
+
+        // Render today's meals
+        function renderTodaysMeals() {
+            const today = new Date().toISOString().split('T')[0];
+            const todaysMeals = currentMeals.filter(meal => meal.date === today);
+            const container = document.getElementById('todaysMeals');
+
+            if (todaysMeals.length === 0) {
+                container.innerHTML = '<p class="text-muted text-center">No meals logged today. Start by adding your first meal!</p>';
+                return;
+            }
+
+            container.innerHTML = todaysMeals.map(meal => `
+                <div class="meal-card">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h6 class="mb-1">${meal.food_name}</h6>
+                            <small class="text-muted text-capitalize">${meal.meal_type}</small>
+                            <div class="mt-2">
+                                <span class="nutrition-badge">${meal.calories} cal</span>
+                                <span class="nutrition-badge">${meal.protein}g protein</span>
+                                <span class="nutrition-badge">${meal.carbs}g carbs</span>
+                                <span class="nutrition-badge">${meal.fat}g fat</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-sm btn-outline-danger" onclick="deleteMeal('${meal.__backendId || meal.id}')">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Delete meal function
+        async function deleteMeal(mealId) {
+            const meal = currentMeals.find(m => (m.__backendId || m.id) === mealId);
+            if (!meal) return;
+
+            if (window.dataSdk && meal.__backendId) {
+                const result = await window.dataSdk.delete(meal);
+                if (result.isOk) {
+                    showToast("Meal deleted successfully!", "success");
+                } else {
+                    showToast("Failed to delete meal. Please try again.", "error");
+                }
+            } else {
+                const index = currentMeals.findIndex(m => m.id === mealId);
+                if (index > -1) {
+                    currentMeals.splice(index, 1);
+                    dataHandler.onDataChanged(currentMeals);
+                    showToast("Meal deleted successfully!", "success");
+                }
+            }
+        }
+
+        // Generate meal suggestions
+        function generateMealSuggestions() {
+            const suggestions = [
+                {
+                    name: "Grilled Chicken Salad",
+                    type: "lunch",
+                    calories: 350,
+                    protein: 35,
+                    description: "Fresh mixed greens with grilled chicken breast, perfect for a healthy lunch."
+                },
+                {
+                    name: "Overnight Oats with Berries",
+                    type: "breakfast",
+                    calories: 280,
+                    protein: 12,
+                    description: "Nutritious breakfast packed with fiber and antioxidants."
+                },
+                {
+                    name: "Salmon with Quinoa",
+                    type: "dinner",
+                    calories: 450,
+                    protein: 40,
+                    description: "Omega-3 rich salmon with protein-packed quinoa and vegetables."
+                },
+                {
+                    name: "Greek Yogurt Parfait",
+                    type: "snack",
+                    calories: 180,
+                    protein: 15,
+                    description: "Creamy Greek yogurt layered with fresh fruits and granola."
+                }
+            ];
+
+            const container = document.getElementById('mealSuggestions');
+            container.innerHTML = suggestions.map(suggestion => `
+                <div class="food-suggestion">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h6 class="mb-1">${suggestion.name}</h6>
+                            <p class="mb-2 text-muted">${suggestion.description}</p>
+                            <small class="text-capitalize fw-bold">${suggestion.type} • ${suggestion.calories} calories • ${suggestion.protein}g protein</small>
+                        </div>
+                        <button class="btn btn-sm btn-outline-primary" onclick="addSuggestedMeal('${suggestion.name}', '${suggestion.type}', ${suggestion.calories}, ${suggestion.protein})">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Add suggested meal
+        function addSuggestedMeal(name, type, calories, protein) {
+            document.getElementById('mealType').value = type;
+            document.getElementById('foodName').value = name;
+            document.getElementById('calories').value = calories;
+            document.getElementById('protein').value = protein;
+            document.getElementById('carbs').value = Math.round(calories * 0.4 / 4); // Estimate carbs
+            document.getElementById('fat').value = Math.round(calories * 0.3 / 9); // Estimate fat
+            
+            showToast("Meal details filled! Review and submit.", "info");
+        }
+
+        // Initialize charts
+        function initializeCharts() {
+            // Nutrition breakdown chart (Doughnut)
+            const nutritionCtx = document.getElementById('nutritionChart').getContext('2d');
+            nutritionCharts.nutrition = new Chart(nutritionCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Protein', 'Carbohydrates', 'Fat'],
+                    datasets: [{
+                        data: [30, 45, 25],
+                        backgroundColor: ['#667eea', '#4facfe', '#f093fb'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            // Weekly calorie chart (Line)
+            const weeklyCtx = document.getElementById('weeklyChart').getContext('2d');
+            nutritionCharts.weekly = new Chart(weeklyCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'Calories',
+                        data: [1800, 2100, 1950, 2200, 1900, 2300, 2000],
+                        borderColor: '#667eea',
+                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Daily trend chart (Bar)
+            const dailyTrendCtx = document.getElementById('dailyTrendChart').getContext('2d');
+            nutritionCharts.dailyTrend = new Chart(dailyTrendCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Breakfast', 'Lunch', 'Dinner', 'Snacks'],
+                    datasets: [{
+                        label: 'Calories',
+                        data: [400, 600, 700, 200],
+                        backgroundColor: ['#667eea', '#4facfe', '#f093fb', '#a8edea']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Weekly nutrition chart (Radar)
+            const weeklyNutritionCtx = document.getElementById('weeklyNutritionChart').getContext('2d');
+            nutritionCharts.weeklyNutrition = new Chart(weeklyNutritionCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['Protein', 'Carbs', 'Fat', 'Fiber', 'Vitamins', 'Minerals'],
+                    datasets: [{
+                        label: 'This Week',
+                        data: [85, 70, 60, 75, 80, 65],
+                        borderColor: '#667eea',
+                        backgroundColor: 'rgba(102, 126, 234, 0.2)',
+                        pointBackgroundColor: '#667eea'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+
+            // Monthly chart (Line)
+            const monthlyCtx = document.getElementById('monthlyChart').getContext('2d');
+            nutritionCharts.monthly = new Chart(monthlyCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                    datasets: [
+                        {
+                            label: 'Average Calories',
+                            data: [1950, 2050, 1900, 2100],
+                            borderColor: '#667eea',
+                            backgroundColor: 'rgba(102, 126, 234, 0.1)'
+                        },
+                        {
+                            label: 'Goal',
+                            data: [2000, 2000, 2000, 2000],
+                            borderColor: '#f093fb',
+                            borderDash: [5, 5]
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        // Update charts with real data
+        function updateCharts() {
+            if (!nutritionCharts.nutrition) return;
+
+            const today = new Date().toISOString().split('T')[0];
+            const todaysMeals = currentMeals.filter(meal => meal.date === today);
+
+            if (todaysMeals.length > 0) {
+                const totalProtein = todaysMeals.reduce((sum, meal) => sum + meal.protein, 0);
+                const totalCarbs = todaysMeals.reduce((sum, meal) => sum + meal.carbs, 0);
+                const totalFat = todaysMeals.reduce((sum, meal) => sum + meal.fat, 0);
+
+                nutritionCharts.nutrition.data.datasets[0].data = [totalProtein, totalCarbs, totalFat];
+                nutritionCharts.nutrition.update();
+
+                // Update daily trend chart
+                const mealTypes = ['breakfast', 'lunch', 'dinner', 'snack'];
+                const mealCalories = mealTypes.map(type => {
+                    return todaysMeals
+                        .filter(meal => meal.meal_type === type)
+                        .reduce((sum, meal) => sum + meal.calories, 0);
+                });
+
+                nutritionCharts.dailyTrend.data.datasets[0].data = mealCalories;
+                nutritionCharts.dailyTrend.update();
+            }
+        }
+
+        // Show section function
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('d-none');
+            });
+            document.getElementById(sectionId).classList.remove('d-none');
+        }
+
+        // Navigation event listeners
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    showSection(href.substring(1));
+                }
+            });
+        });
+
+        // Update goals function
+        function updateGoals() {
+            const calorieGoal = document.getElementById('calorieGoal').value;
+            const proteinGoal = document.getElementById('proteinGoal').value;
+            
+            if (calorieGoal) {
+                config.daily_calorie_goal = calorieGoal;
+                if (window.elementSdk) {
+                    window.elementSdk.setConfig({ daily_calorie_goal: calorieGoal });
+                }
+            }
+            
+            showToast("Goals updated successfully!", "success");
+            updateDashboardStats();
+        }
+
+        // Utility functions
+        function generateId() {
+            return 'meal_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        }
+
+        function showToast(message, type = 'info') {
+            const toastContainer = document.createElement('div');
+            toastContainer.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 9999;
+                padding: 12px 20px;
+                border-radius: 8px;
+                color: white;
+                font-weight: 500;
+                max-width: 300px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            `;
+            
+            const colors = {
+                success: '#28a745',
+                error: '#dc3545',
+                warning: '#ffc107',
+                info: '#17a2b8'
+            };
+            
+            toastContainer.style.backgroundColor = colors[type] || colors.info;
+            toastContainer.textContent = message;
+            
+            document.body.appendChild(toastContainer);
+            
+            setTimeout(() => {
+                toastContainer.remove();
+            }, 3000);
+        }
+
+        // Element SDK configuration
+        async function onConfigChange(newConfig) {
+            const customFont = newConfig.font_family || defaultConfig.font_family;
+            const baseSize = newConfig.font_size || defaultConfig.font_size;
+            const baseFontStack = '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+
+            document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+            document.body.style.fontSize = `${baseSize}px`;
+
+            const bgColor = newConfig.background_color || defaultConfig.background_color;
+            const surfaceColor = newConfig.surface_color || defaultConfig.surface_color;
+            const textColor = newConfig.text_color || defaultConfig.text_color;
+            const primaryColor = newConfig.primary_action_color || defaultConfig.primary_action_color;
+
+            document.querySelector('.app-container').style.background = `linear-gradient(135deg, ${primaryColor} 0%, #764ba2 100%)`;
+            document.querySelectorAll('.dashboard-card, .feature-card').forEach(el => {
+                el.style.background = surfaceColor;
+                el.style.color = textColor;
+            });
+
+            const appTitle = newConfig.app_title || defaultConfig.app_title;
+            const userName = newConfig.user_name || defaultConfig.user_name;
+            
+            document.getElementById('appTitle').innerHTML = `<i class="fas fa-leaf text-success me-2"></i>${appTitle}`;
+            document.getElementById('heroTitle').textContent = `Welcome to ${appTitle}`;
+            document.getElementById('userNameDisplay').textContent = userName;
+        }
+
+        // Initialize Element SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities: (cfg) => ({
+                    recolorables: [
+                        {
+                            get: () => cfg.background_color || defaultConfig.background_color,
+                            set: (value) => {
+                                cfg.background_color = value;
+                                window.elementSdk.setConfig({ background_color: value });
+                            }
+                        },
+                        {
+                            get: () => cfg.surface_color || defaultConfig.surface_color,
+                            set: (value) => {
+                                cfg.surface_color = value;
+                                window.elementSdk.setConfig({ surface_color: value });
+                            }
+                        },
+                        {
+                            get: () => cfg.text_color || defaultConfig.text_color,
+                            set: (value) => {
+                                cfg.text_color = value;
+                                window.elementSdk.setConfig({ text_color: value });
+                            }
+                        },
+                        {
+                            get: () => cfg.primary_action_color || defaultConfig.primary_action_color,
+                            set: (value) => {
+                                cfg.primary_action_color = value;
+                                window.elementSdk.setConfig({ primary_action_color: value });
+                            }
+                        },
+                        {
+                            get: () => cfg.secondary_action_color || defaultConfig.secondary_action_color,
+                            set: (value) => {
+                                cfg.secondary_action_color = value;
+                                window.elementSdk.setConfig({ secondary_action_color: value });
+                            }
+                        }
+                    ],
+                    borderables: [],
+                    fontEditable: {
+                        get: () => cfg.font_family || defaultConfig.font_family,
+                        set: (value) => {
+                            cfg.font_family = value;
+                            window.elementSdk.setConfig({ font_family: value });
+                        }
+                    },
+                    fontSizeable: {
+                        get: () => cfg.font_size || defaultConfig.font_size,
+                        set: (value) => {
+                            cfg.font_size = value;
+                            window.elementSdk.setConfig({ font_size: value });
+                        }
+                    }
+                }),
+                mapToEditPanelValues: (cfg) => new Map([
+                    ["app_title", cfg.app_title || defaultConfig.app_title],
+                    ["user_name", cfg.user_name || defaultConfig.user_name],
+                    ["daily_calorie_goal", cfg.daily_calorie_goal || defaultConfig.daily_calorie_goal]
+                ])
+            });
+
+            if (window.elementSdk.config) {
+                config = window.elementSdk.config;
+            }
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', initializeApp);
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'998bc8fe45d1d2fe',t:'MTc2MjE3MjAwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
