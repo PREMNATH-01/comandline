@@ -1,0 +1,215 @@
+/*Reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button{
+    border: initial;
+    background-color: initial;
+    color: inherit;
+    font: inherit;
+    outline: none;
+}
+
+/*base styles*/
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+.app{
+    font-family: 'lato', sans-serif;
+    font-size: 15px;
+    color: #fff;
+    height: 100vh;
+    width: 100vw;
+}
+
+.app_container{
+    display: flex;
+    height: calc(100vh - 55px);
+}
+
+/*styles*/
+.header{
+    background-image: linear-gradient(to left, #4e54c8, #8f94fb);
+    height: 55px;
+    display: flex;
+}
+
+/*keyframes*/
+@keyframes fade-in-from-top{
+    0%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+.logo{
+    align-self: content;
+    margin-left: 5px;
+    margin-right: 30px;
+    animation: fade-in-from-top 0.5s;
+}
+
+.dd-toggle{
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0 13px;
+    cursor: pointer;
+    transition: all 0.4s;
+    animation: fade-in-from-top 0.5s ease-in-out;
+}
+.dd-toggle:hover{
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.dd-toggle:focus{
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.dd-toggle:nth-of-type(4){
+    margin-left: auto;
+}
+
+.dd-toggle:last-child{
+    display: flex;
+    align-items: center;
+}
+
+.dd-toogle_text{
+    margin-right: 8px;
+}
+.dd-toggle_img{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+.dd-toggle_icon{
+    border: solid transparent;
+    border-width: 0 2px 2px 0; 
+    margin: 3px;
+    display: inline-block;
+    padding: 4px;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+}
+
+.dd-toggle i {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    transition: color 0.3s;
+  }
+  
+  .dd-toggle:hover i {
+    color: #fff;
+  }
+
+/*sidebar*/
+.sidebar{
+    width: 75px;
+    background-color: #10171a;
+}
+
+.panel{
+    width: 350px;
+    background-color: #2b363c;
+}
+
+.main{
+    flex-grow: 1;
+    background-color: #161f23;
+}
+
+
+/*add for side bars*/
+.sidebar1 {
+    position: relative;
+    width: 75px;
+    height: 100vh;
+    background-color: #10171A;
+    transition: width 0.4s ease;
+    overflow: hidden;
+  }
+  
+  .sidebar1:hover {
+    width: 220px; /* expands when hovered */
+  }
+  
+  /* Sidebar button styles */
+  .menu__button1 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    color: rgba(255,255,255,0.8);
+    border: none;
+    background: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+
+  
+  .menu__button1:hover {
+    background-color: rgba(255, 255, 255, 0.779);
+  }
+  
+  .menu__button1 i {
+    font-size: 18px;
+    min-width: 25px;
+  }
+  
+  .menu__button1 span {
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* when sidebar expands, show text */
+  .sidebar1:hover .menu__button1 span {
+    opacity: 1;
+  }
+  
+
+
+  .menu_button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    color: rgba(255, 255, 255, 0.8);  /* default text/icon color */
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;       /* smooth transition */
+}
+
+.menu_button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* subtle highlight */
+    color: #fff;                                /* icon + text turn white */
+}
+
+.menu_button:hover .menu_button_icon {
+    color: #fff;    /* ensure icon changes on hover */
+}
+
+/*add for side bars*/
+.sidebar {
+    position: relative;
+    width: 75px;
+    height: 100vh;
+    background-color: #10171A;
+    transition: width 0.4s ease;
+    overflow: hidden;
+  }
+  
+  .sidebar:hover {
+    width: 140px; /* expands when hovered */
+  }
