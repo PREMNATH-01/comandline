@@ -213,3 +213,37 @@ body{
   .sidebar:hover {
     width: 140px; /* expands when hovered */
   }
+
+
+  .footer {
+    height: 50px;
+    background-color: #10171a;       /* match sidebar/header */
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: space-between;  /* text left, icons right */
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+    font-size: 14px;
+}
+
+.footer-icons a {
+    color: rgba(255, 255, 255, 0.7);
+    margin-left: 15px;
+    font-size: 18px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-icons a:hover {
+    color: #fff;           /* icon color on hover */
+    transform: scale(1.2); /* slight zoom on hover */
+    transition: color 0.3s, transform 0.3s;
+}
+
+
+.main, .panel, .sidebar, .sidebar1 {
+    padding-bottom: 50px; /* same as footer height */
+}
