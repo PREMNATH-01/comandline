@@ -1,0 +1,1086 @@
+/* HEADER */
+.header {
+    width: 1920px;
+    padding: 20px 0;
+    background: #fff;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.logo h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1b1b1b;
+}
+
+/* NAVIGATION */
+.navigation {
+    display: flex;
+    gap: 40px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.navigation a.active {
+    font-weight: 600;
+}
+
+/* AUTH BUTTONS */
+.auth {
+    position: relative;
+    left: -40px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.auth .login {
+    color: #FA7436;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth .signup {
+    background: #FA7436;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(250, 116, 54, 0.4);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .navigation {
+        display: none;
+    }
+}
+
+
+
+
+/* HERO SECTION */
+.hero-container{
+    top: -200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    width: 1920px;
+    height: 999px;
+    position: relative;
+}
+
+
+.hero-text h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-text span {
+    color: #ff6b30;
+}
+
+.hero-text p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
+    max-width: 450px;
+}
+
+.btn-primary {
+    background: #ff6b30;
+    padding: 14px 28px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 25px;
+    font-weight: 600;
+}
+
+.hero-text{
+    position: relative;
+    left: 400px;
+}
+
+/* HERO IMAGES */
+.hero-image {
+    position: relative;
+    width: 550px;
+    height: 550px;
+    right: 400px;
+}
+
+/* Huge orange circle */
+.hero-image .circle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 480px;
+    z-index: 1;
+}
+
+/* Tourist image */
+.hero-image .tourist {
+    position: absolute;
+    right: 70px;
+    bottom: 0;
+    width: 380px;
+    z-index: 3;
+}
+
+/* Floating cards */
+.hero-image .card1 {
+    position: absolute;
+    top: 150px;
+    left: 5px;
+    width: 180px;
+    z-index: 5;
+}
+
+.hero-image .card2 {
+    position: absolute;
+    top: 235px;
+    right: -50px;
+    width: 265px;
+    z-index: 5;
+}
+
+.hero-image .card3 {
+    position: absolute;
+    bottom: 60px;
+    left: 90px;
+    width: 200px;
+    z-index: 5;
+}
+
+/* Plane dotted path */
+.hero-image .plane {
+    position: absolute;
+    top: 15px;
+    
+    right: -99px;
+    width: 700px;
+    z-index: 0;
+    opacity: 0.99;
+}
+
+/* Fixed bottom center search bar */
+.top-search-bar{
+    position:absolute;
+    bottom: 30px;   
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 841px;
+    height: 124px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+    z-index: 100;
+}
+
+/* each section*/
+.tsb-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.tsb-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    display: flex;
+    align-items: center;
+}
+
+.tsb-title .arrow {
+    font-size: 12px;
+    margin-left: 6px;
+    color: #ff6b30;
+}
+
+.tsb-item p {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* button */
+.tsb-btn {
+    background: #ff6b30;
+    border: none;
+    padding: 16px 30px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+
+/* Things you need Section styling */
+.section {
+   /* background-color: #f9f9f9; /* Light background similar to image */
+    padding: 20px 0;
+    position: relative;
+    top: -150px;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    text-align: center;
+    width: 1920px;
+    height: 524px;
+    margin: 0 0;
+    background-color: #f5f6fa;
+  }
+  
+  /* Container to center content */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Title styling */
+  .section-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 40px;
+    line-height: 1.2;
+  }
+  
+  .section-title span {
+    color: #f57c00; /* Accent color for "Do" */
+  }
+  
+  /* Decorative element positioning */
+  .decorative-element {
+    position: absolute;
+    top: 5px;
+    right: 200px;
+    width: 150px;
+    height: auto;
+    opacity: 0.8;
+    z-index: 0;
+  }
+  
+  /* Card grid layout */
+  .card-grid {
+    position: relative;
+    top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  /* Individual card styles */
+  .card {
+    background-color: #fff;
+    width: 280px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+  }
+  
+  /* Hover effect for cards */
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  }
+  
+  /* Icon images inside cards */
+  .card img:first-child {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    object-fit: contain;
+  }
+  
+  /* Decorative vector images inside cards */
+  .decorative-vector {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 80px;
+    height: auto;
+    opacity: 0.2;
+  }
+  
+  /* Card titles */
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #222;
+  }
+  
+  /* Card paragraph */
+  p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+
+
+
+
+ /* Section */
+ .section1 {
+    /* background-color: #f9f9f9; /* Light background similar to image */
+     top: -170px;
+     padding: 20px 0;
+     position: relative;
+     font-family: 'Arial', sans-serif;
+     overflow: hidden;
+     text-align: center;
+     width: 1920px;
+     height: 893px;
+   }
+.deals-section {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.section-title span {
+    color: #FA7436;
+}
+
+.section-subtitle {
+    color: #616161;
+    margin-top: 10px;
+}
+
+/* Cards Layout */
+.deals-cards {
+    position: relative;
+    top: 40px;
+    display: flex;
+    gap: 32px;                /* spacing between cards */
+    justify-content: center;  /* center cards inside container */
+    align-items: flex-start;
+    flex-wrap: nowrap;        /* IMPORTANT: prevents wrapping */
+    overflow-x: auto;         /* scroll on small screens */
+    padding-bottom: 8px;      /* space for scrollbar */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Optional: better-looking scrollbar */
+.deals-cards::-webkit-scrollbar {
+    height: 6px;
+}
+.deals-cards::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.15);
+    border-radius: 6px;
+}
+
+.deal-card {
+    width: 260px;
+    background: #fff;
+    border-radius: 20px;
+    padding-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+/* Main Image */
+.deal-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+/* Book Now */
+.book-now {
+    position: absolute;
+    top: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FA7436;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+}
+
+/* Info Area */
+.deal-info {
+    padding: 15px 20px;
+    text-align: left;
+}
+
+/* Rating */
+.rating {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin: 6px 0 10px;
+}
+
+.star-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Location */
+.location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #777;
+}
+
+.loc-icon {
+    width: 16px;
+    opacity: 0.6;
+}
+
+/* Prices */
+.price {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+}
+
+.old {
+    text-decoration: line-through;
+    color: #B5B5B5;
+}
+
+.new {
+    background: #FFE1D6;
+    padding: 2px 8px;
+    border-radius: 6px;
+    color: #FA7436;
+}
+
+
+/* Section spacing */
+.deals-section {
+    text-align: center;
+    padding-top: 120px; /* FIX: adds proper spacing like the design */
+}
+
+/* Cards wrapper */
+.deals-cards {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap; /* FIX: allows wrapping on smaller screens */
+    overflow-x: auto; /* FIX: horizontal scroll on small screens */
+    padding-bottom: 8px; /* FIX: space for scrollbar */
+    -webkit-overflow-scrolling: touch; /* FIX: smooth scrolling on iOS */
+}
+
+/* Individual card */
+.deal-card {
+    flex: 0 0 260px; /* FIX: ensures consistent card width */
+    width: 260px;
+    background: #fff;
+    border-radius: 25px; /* smoother like Figma */
+    padding-bottom: 25px;
+    box-shadow: 0px 20px 40px rgba(0,0,0,0.08); /* FIX: softer shadow */
+    position: relative;
+    overflow: hidden;
+}
+.deal-card:hover {
+    transform: translateY(-8px); /* FIX: subtle lift on hover */
+    box-shadow: 0px 25px 50px rgba(0,0,0,0.12); /* FIX: enhanced shadow on hover */
+}   
+
+/* Image */
+.deal-img {
+    width: 100%;
+    height: 220px; /* FIX: larger image height */
+    object-fit: cover;
+    border-radius: 25px 25px 0 0;
+}
+
+/* Book Now button */
+.book-now {
+    position: absolute;
+    top: 185px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FA7436;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+}
+
+/* Wrapper inside card */
+.info-block {
+    padding: 18px 22px;
+}
+
+/* 2 rows container */
+.row {
+    display: flex;
+    justify-content: space-between;   /* left on left, right on right */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+/* Title */
+.row .title {
+    text-align: left;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+/* Rating row */
+.star-icon .rating {
+    margin-left: auto;      /* pushes content to right end */
+    text-align: right;
+    width: 18px;
+    display: inline-block;
+}
+
+
+
+/* Location row */
+.location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #747474;
+}
+
+.loc-icon {
+    width: 18px;
+    opacity: 0.7;
+}
+
+/* Price row */
+.price {
+    font-weight: bold;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.price .old {
+    text-decoration: line-through;
+    color: #b4b4b4;
+}
+
+.price .new {
+    background: #FFE1D6;
+    padding: 2px 8px;
+    border-radius: 6px;
+    color: #ff6a3d;
+}
+
+/* button */
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+a:hover {
+    background-color: #ff6a3d;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.previous{
+    background-color: #f0f0f0;
+    color: #333;
+}
+  
+.next{
+    background-color: #ff6a3d;
+    color: #fff;
+}
+.rounded{
+    position: relative;
+    bottom: -60px;
+    border-radius: 50%;
+}
+
+
+/* vacation plan section */
+.section2 {
+    /* background-color: #f9f9f9; /* Light background similar to image */
+     padding: 20px 0;
+     position: relative;
+     top: -300px;
+     font-family: 'Arial', sans-serif;
+     overflow: hidden;
+     text-align: center;
+     width: 1920px;
+     height: 893px;
+   }
+/*tree structure*/
+
+/* nav buttons */
+.nav-buttons {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 1100px;
+    margin: 0 auto 20px;
+}
+
+.nav-btn{
+    background-color: #ff6a3d;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.nav-btn.active {
+    background-color: #e76f32;
+    color: #fff;
+}
+
+.tree-element {
+    position: absolute;
+    top: 70px;
+    right: 650px;
+    width: 80px;
+    height: auto;
+    opacity: 0.8;
+    z-index: 0;
+}
+
+/* plan cards container */
+.vacations-cards {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.vacation-card{
+    width: 320px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.vacation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.vacation-card .vacation-img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+
+/* reveiws card*/
+
+.nav-buttons-1 {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 1100px;
+    margin: 0 auto 20px;
+}
+
+.reviews-section {
+    position: relative;
+    top: -450px;
+    width: 1920px;
+    height: 596px;
+    margin: 0 0;
+    background-color: #f5f6fa;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.reviews-container {
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    align-items: center;
+}
+
+/* left side */
+
+.reviews-text h1{
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.reviews-text span {
+    color: #ff6a3d;
+}
+.reviews-text p {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #666;
+}
+
+.nav-butttons2 {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+.nav-btn1 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1pxpx solid #ddd;
+    cursor: pointer;
+}
+
+.nav-btn1:hover {
+    background: #ff6a3d;
+    color: #fff;
+    border-color: transparent;
+}
+
+/* right side */
+.reviews-slider-wrapper {
+    position: relative;
+}
+
+.plane {
+    position: absolute;
+    top: -40px;
+    right: -60px;
+    width: 180px;
+    opacity: 0.5;
+}
+
+.review-slider {
+    width: 541px;
+    height: auto;
+    overflow: hidden;
+}
+
+.slider-track {
+    display: flex;
+    gap: 40px;
+    transition: transform 0.5s ease;
+}
+
+.review-img {
+    width: 541px;
+    border-radius: 12px;
+
+}
+
+.shadow-card {
+    position: absolute;
+    width: 500px;
+    top: 90px;
+    left: 60px;
+    opacity: 0.45;
+    filter: blur(2px);
+    transition: 0.3s ease;
+    pointer-events: none;
+}
+
+.plane1 {
+    position: absolute;
+    top: -30px;
+    left: 500px;
+    width: 150px;
+    z-index: 0;
+    opacity: 0.8;
+}
+
+
+/* update blog card section */
+
+/* ---------- Latest Blog Section (Exact size) ---------- */
+.update {
+    width: 1920px;
+    /*height: 805px;*/
+    padding-bottom: 80px 0 60px; /* keeps reasonable space */
+    height: auto; /* removes empty space */
+
+    margin: 0 auto;                /* center the whole block */
+    padding-top: 0px;
+    text-align: center;
+
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    top: -400px;
+}
+
+/* Title */
+.section-title {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.section-title span {
+    color: #ff6b30;
+}
+
+/* Blog cards container */
+.blog-cards {
+    width: 100%;
+    margin-top: 60px;
+
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* Individual blog card */
+.blog-card {
+    width: 270px;
+    text-align: left;
+}
+
+.blog-img {
+    width: 100%;
+    height: 180px;
+    border-radius: 14px;
+    object-fit: cover;
+}
+
+.blogtext {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #222;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.duration {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #777;
+}
+
+/* Scroll dots */
+.scroll-dots {
+    position: absolute;
+    bottom: -8px;    /* pushed near bottom edge */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: #d0d0d0;
+    border-radius: 50%;
+}
+
+.dot.active {
+    background: #ff6b30;
+}
+
+
+
+/* FOOTER */
+
+.subscribe-section {
+    width: 1920px;
+    height: 350px;                  /* reduced so overall height = 898 */
+    background: #f4f6fb;
+    /*background: #e47a44;*/
+    margin: 0 auto;                 /* center width */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    position: relative;
+    text-align: center;
+    overflow: visible;               /* hide background graphics overflow */
+}
+
+.subscribe-content {
+    position: relative;
+    bottom: 200px;
+    text-align: center;
+    color: #fff;
+    z-index: 5;
+    
+  }
+
+.subscribe-content h2 {
+    font-size: 42px;
+    font-weight: 700;
+    top: 200px;
+    margin-bottom: 35px;
+    position: relative;
+    z-index: 10;
+}
+
+
+.subscribe-box {
+    display: flex;
+    margin-top: 30px;
+    top: -200px;
+    bottom: 50px;
+    position: relative;
+    left: 250px;
+    z-index: 10;
+  }
+  
+  .subscribe-box input {
+    width: 500px;
+    padding: 18px;
+    border: none;
+    border-radius: 10px 0 0 10px;
+    outline: none;
+    font-size: 16px;
+  }
+  
+  .subscribe-box button {
+    padding: 18px 30px;
+    background: white;
+    color: #e47a44;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .tree-element1 {
+    position: absolute;
+    top: 170px;
+    right: 70px;
+    width: 120px;
+    z-index: 1;
+}
+.subscribe-element-2{
+    position: absolute;
+    bottom: 90px;
+    left: 10px;
+    width: 350px;
+    z-index: 1;
+}
+
+/* Footer Section */
+/* Footer Section */
+.footer-main {
+    width: 1920px;
+    margin: 0 auto;
+
+    background: #f4f6fb;
+    padding: 140px 0 80px; /* top is larger to fit subscribe-box overlap */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer container centered */
+.footer-container {
+    width: 1200px;            /* same width style used in update section */
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* Footer logo section */
+.footer-logo img {
+    margin-bottom: 15px;
+}
+
+/* Footer title */
+.footer-col h4 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Links */
+.footer-col dl dt {
+    margin-bottom: 10px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Footer bottom centered */
+.footer-bottom {
+    width: 1200px;
+    margin: 40px auto 0;
+
+    border-top: 1px solid #ddd;
+    padding-top: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: #555;
+}
