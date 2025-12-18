@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="india_3326488.png" rel="icon" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>South Indian Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .slider{
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .slides{
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+            
+        }
+
+        .slide{
+            min-width: 100%;
+            height: 500px;
+            background-size: contain;
+            background-position: center;
+            
+        }
+
+        .slider-nav{
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <header class="bg-gray-800 p-4 sticky top-0 z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl text-yellow-400 font-bold">Vannakkam!!!</h1>
+            <nav>
+                <ul class="flex space-x-4 text-yellow-400">
+                    <li><a class="hover:text-yellow-100" href="#about">About</a></li>
+                    <li><a class="hover:text-yellow-100" href="#services">Services</a></li>
+                    <li><a class="hover:text-yellow-100" href="#team">Team</a></li>
+                    <li><a class="hover:text-yellow-100" href="#gallery">Gallery</a></li>
+                    <li><a class="hover:text-yellow-100" href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with sliders -->
+    <section class="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-white py-20">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4">Experience the Richness of South India</h2>
+            <p class="text-lg mb-8">Discover the culture, cuisine, and beauty of South India with us.</p>
+            
+
+            <!-- Image Slider -->
+            <div class="slider">
+                <div class="slides" id="slides">
+                    <div class="slide">
+                        <img src="./01.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="./02.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="./03.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="slider-nav">
+                    <button class="prev" onclick="prevslide()">&#10094;</button>
+                    <button class="next" onclick="nextslide()">&#10095;</button>
+                </div>
+            </div>
+            
+            <div class="mt-10">
+            <a href="#about" class="bg-white text-red-500 font-semibold px-6 py-3 rounded-full hover:bg-gray-200">Learn More</a>
+           </div>
+        </div>
+    </section>
+
+    <!--About Us-->
+    <section id="about" class="py-16 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h3 class="text-3xl font-bold text-gray-800 mb-6">About Us</h3>
+            <p class="text-lg text-gray-700">
+                We are passionate about showcasing the vibrant culture and traditions of South India.<br>
+                Our mission is to provide an immersive experience that highlights the unique aspects of this beautiful region.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our services section with Cards -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto text-center">
+            <h3 class="text-3xl font-bold text-gray-800 mb-6 text-center">Our Services</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white shadow-md p-6 rounded-1g hover:shadow-1g transition-shadow">
+                    <img src="./01.jpg" alt="Web Development" class="h-40 w-full object-cover mb-4 rounded-md"/>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Web Development</h4>
+                    <p class="text-gray-700">We build modern, responsive websites with a South Indian touch.</p>
+                </div>
+
+                <div class="bg-white shadow-md p-6 rounded-1g hover:shadow-1g transition-shadow">
+                    <img src="./02.jpg" alt="UI/UX Design" class="h-40 w-full object-cover mb-4 rounded-md"/>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">UI/UX Design</h4>
+                    <p class="text-gray-700">Beautiful and functional designs inspired by traditional elements.</p>
+                </div>
+
+                <div class="bg-white shadow-md p-6 rounded-1g hover:shadow-1g transition-shadow">
+                    <img src="./03.jpg" alt="SEO Optimization" class="h-40 w-full object-cover mb-4 rounded-md"/>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">SEO Optimization</h4>
+                    <p class="text-gray-700">Boost your website’s visibility with our expertise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Work Gallery -->
+    <section id="gallery" class="py-16 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h3 class="text-3xl font-bold text-gray-800 mb-6">Our Work Gallery</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <img src="./05.jpg" alt="Gallery Image 1" class="w-full h-64 object-cover rounded-md"/>
+                <img src="./04.jpg" alt="Gallery Image 2" class="w-full h-64 object-cover rounded-md"/>
+                <img src="./06.jpg" alt="Gallery Image 3" class="w-full h-64 object-cover rounded-md"/>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team sections with card-->
+
+    <section id="team" class="py-16 bg-gray-50">
+        <div class="container mx-auto text-center">
+            <h3 class="text-3xl font-bold text-gray-800 mb-6">Our Team</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white shadow-md p-6 rounded-1g hover:shadow-1g transition-shadow">
+                    <img src="./07.jpg" alt="Team Member 1" class="h-40 w-40 object-cover mb-4 rounded-full mx-auto"/>
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">Arun Kumar</h4>
+                    <p class="text-gray-700">Founder & CEO</p>
+                </div>
+
+                <div class="bg-white shadow-md p-6 rounded-1g hover:shadow-1g transition-shadow">
+                    <img src="./09.jpg" alt="Team Member 2" class="h-40 w-40 object-cover mb-4 rounded-full mx-auto"/>
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">Priya Sharma</h4>
+                    <p class="text-gray-700">Chief Designer</p>
+                </div>
+
+                <div class="bg-white shadow-md p-6 rounded-1g hover:shadow-1g transition-shadow">
+                    <img src="./08.jpg" alt="Team Member 3" class="h-40 w-40 object-cover mb-4 rounded-full mx-auto"/>
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">Ravi Menon</h4>
+                    <p class="text-gray-700">Marketing Head</p>
+                </div>
+        </div>
+    </section>
+
+    <!-- Testimonal Sections-->
+
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h3 class="text-3xl font-bold text-gray-800 mb-6">What Our clients say</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white shadow-md p-6 rounded-1g hover:shadow-1g transition-shadow">
+                    <p class="text-gray-700 italic mb-4">"An amazing experience! The team truly captured the essence of South India in their work."</p>
+                    <p class="mt-4 text-yellow-400">- Suresh R.</p>
+                </div>
+
+                <div class="bg-white shadow-md p-6 rounded-1g hover:shadow-1g transition-shadow">
+                    <p class="text-gray-700 italic mb-4">"Highly recommend their services! Professional and creative with a deep understanding of culture."</p>
+                    <p class="mt-4 text-yellow-400">- Meena K.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Call action sections-->
+
+    <section class="py-16 bg-gray-800 text-white text-center">
+        <h3 class="text-3xl font-bold mb-6">Ready to Explore South India with Us?</h3>
+        <a href="#contact" class="bg-yellow-400 text-gray-800 font-semibold px-6 py-3 rounded-full hover:bg-yellow-500">Contact Us</a>
+    </section>
+
+    <!-- Contact Slider-->
+
+    <section class="py-16 bg-gray-900 text-white text-center" id="contact">
+        <div class="container mx-auto">
+            <h3 class="text-3xl font-bold mb-6">Get in Touch</h3>
+            <form class="max-w-lg mx-auto">
+                <div class="mb-4 text-left">
+                    <label class="block mb-2" for="name">Name</label>
+                    <input class="w-full p-2 rounded-md text-gray-900" type="text" id="name" placeholder="Your Name"/>
+                </div>
+                <div class="mb-4 text-left">
+                    <label class="block mb-2" for="email">Email</label>
+                    <input class="w-full p-2 rounded-md text-gray-900" type="email" id="email" placeholder="Your Email"/>
+                </div>
+                <div class="mb-4 text-left">
+                    <label class="block mb-2" for="message">Message</label>
+                    <textarea class="w-full p-2 rounded-md text-gray-900" id="message" rows="4" placeholder="Your Message"></textarea>
+                </div>
+                <button class="bg-yellow-400 text-gray-900 font-semibold px-6 py-3 rounded-full hover:bg-yellow-500" type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section-->
+    <footer class="bg-gray-800 text-white py-6 text-center">
+        <p>&copy; 2024 South Indian Landing Page. All rights reserved.</p>
+    </footer>
+
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.getElementById("slides");
+        const totalSlides = slides.children.length;
+
+        function nextslide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlidePosition();
+        }
+
+        function prevslide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlidePosition();
+        }
+        function updateSlidePosition() {
+            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        setInterval(nextslide, 5000);
+    </script>
+    
+</body>
+</html>
