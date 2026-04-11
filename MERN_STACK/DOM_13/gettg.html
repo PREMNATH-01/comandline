@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1 id="title" class="first">Hello team</h1>
+    <script>
+        // getElementByTagName
+        const tit = document.getElementsByTagName('h1');
+        console.log(tit[0]);
+        tit[0].textContent = 'Hello world';
+    </script>
+</body>
+</html>

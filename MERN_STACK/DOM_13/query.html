@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <p class="para">This is a paragraph.</p>
+    <p class="para">This is another paragraph.</p>
+
+    <ul>
+        <li class="item">Item 1</li>
+        <li class="item">Item 2</li>
+        <li class="item">Item 3</li>
+    </ul>
+
+    <script>
+        // querySelector
+        const firstPara = document.querySelector('.para');
+        console.log(firstPara);
+        firstPara.textContent = 'This is the first paragraph.';
+
+        // querySelectorAll
+        const allItems = document.querySelectorAll('.item');
+        console.log(allItems);
+        allItems.forEach((item, index) => {
+            item.textContent = `Item ${index + 1}`;
+            item.style.border = '1px solid black';
+        });
+        </script>
+</body>
+</html>
