@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prem market day adventure</title>
+</head>
+<body>
+    <h1>Prem and moms market day to-do list</h1>
+    <p>
+        Help prem prepare for the market by adding and managing moms shopping list!
+    </p>
+
+    <!-- input field  to add new items-->
+
+    <input  type="text"
+            id="item-input"
+            placeholder="Enter item name (e.g., apples)"
+    />
+
+    <button id="add-item-btn">Add Item</button>
+
+    <!--Dynamic shopping List-->
+    <ul id="shopping-list"></ul>
+
+    <!--Notification Box-->
+    <p id="notification">Your Ordered Item Added</p>
+
+    <!--Using Script functions for using dom events-->
+    <script>
+        // selecting the input field and button list
+
+        const inputField = document.getElementById('item-input');
+        const addButton = document.getElementById('add-item-btn');
+        const shoppingList = document.getElementById('shopping-list');
+        const notification = document.getElementById('notification');
+
+
+        // Array to store shopping list items
+        let ShoppingItems = [];
+
+
+        // Event Listener to add a new item when clicking the "Add Item" button
+        addButton.addEventListener('click', function(){
+
+            const newItem = inputField.value.trim();
+
+            if(newItem){
+                // Add the new item to the shopping list array
+                ShoppingItems.push(newItem);
+
+                // Create a new list item element
+                const listItem = document.createElement('li');
+                listItem.textContent = newItem;
+
+                //create a button to remove the item from the list
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remove';
+                removeButton.style.marginLeft = '10px'; // Add some spacing between the item and the button
+
+                removeButton.addEventListener('mouseover', function(){
+                    removeButton.style.backgroundColor = 'red'; // Change background color on hover
+                });
+                removeButton.addEventListener('mouseout', function(){
+                    removeButton.style.backgroundColor = ''; // Reset background color when not hovering
+                });
+                removeButton.addEventListener('click', function(){
+                    listItem.remove(); // Remove the list item from the DOM
+                    notification.textContent = `${newItem} removed from the list!`; // Update notification
+                });
+
+                //create a button to complete the item from the list
+                const completeButton = document.createElement('button');
+                completeButton.textContent = 'Click as Ordered complete';
+                completeButton.style.marginLeft = '10px'; // Add some spacing between the item and the button
+
+                completeButton.addEventListener('mouseover', function(){
+                    completeButton.style.backgroundColor = 'green'; // Change background color on hover
+                });
+                completeButton.addEventListener('mouseout', function(){
+                    completeButton.style.backgroundColor = ''; // Reset background color when not hovering
+                });
+                completeButton.addEventListener('click', function(){
+                    listItem.style.textDecoration = 'line-through'; // Mark the item as completed   
+                    notification.textContent = `Your Order ${newItem} Placed Sucessfully!`; // Update notification
+                });
+
+                // Append the remove button to the list item
+                listItem.appendChild(removeButton);
+
+                // Append the complete button to the list item
+                listItem.appendChild(completeButton);
+
+                //APPEND the new list item to the shopping list
+                shoppingList.appendChild(listItem);
+
+                // Clear the input field after adding the item
+                inputField.value = '';
+
+            }
+
+
+        });
+
+        
+    </script>
+        
+
+
+
+
+
+</body>
+</html>

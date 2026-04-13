@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Suppose you have a webpage where users click the button, and the text in a 
+        header changes immediately!!
+    </h1>
+
+    <h2 id="main_tittle">Hello world!!</h2>
+
+    <h3 id="pip">Welcome Premnath</h3>
+
+    <button id="change_tittle">Change the title</button>
+
+
+
+    <script>
+        const tittle = document.getElementById("main_tittle");
+        const button = document.getElementById("change_tittle");
+
+        const header = document.getElementsByTagName("h1");
+
+        const welcome = document.getElementsByTagName("h3");
+
+        button.addEventListener("click", function(){
+            // change the text of header
+            tittle.innerText = "Welcome to the world of DOM Events!!";
+
+            // hide a button
+            button.style.display = "none";
+
+            // change the color of header and welcome text
+            header[0].style.color = "red";
+            welcome[0].style.color = "red";
+            document.body.style.backgroundColor = "goldenrod";
+
+        })
+    </script>
+</body>
+</html>
