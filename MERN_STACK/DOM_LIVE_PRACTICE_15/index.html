@@ -12,12 +12,28 @@
         <div class="quiz-box">
             <div id="Quiz">
                 <h1>Quiz App</h1>
-                <div class="quiz-header"><p id=""></p></div>
+                <div class="quiz-header">
+                    <p id="Progress">Question x of y</p>
+                    <p id="count-down"></p>
+                </div>
             </div>
-            <div class="question"></div>
-            <div class="options"></div>
-            <button class="next-btn">Next</button>
+            <div class="question">
+                <p id="question1"></p>
+            </div>
+        <div class="options">
+            <button class="btn" id="btn0">A. <span id="choice0"></span></button>
+            <button class="btn" id="btn1">B. <span id="choice1"></span></button>
+            <button class="btn" id="btn2">C. <span id="choice2"></span></button>
+            <button class="btn" id="btn3">D. <span id="choice3"></span></button>
         </div>
+        <hr />
+        <footer>
+                <p id="score"></p>
+                <button id="prev-btn">Prev</button>
+                <button id="next-btn">Next</button>
+        </footer>
+        </div>
+    </div>
     <script src="./script.js"></script>
 </body>
 </html>

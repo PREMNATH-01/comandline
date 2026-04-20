@@ -1,0 +1,75 @@
+/*
+Source - https://stackoverflow.com/a/14676665
+Posted by ModernDesigner, modified by community. See post 'Timeline' for change history
+Retrieved 2026-04-20, License - CC BY-SA 4.0
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+
+:root {
+   --white: #fff;
+   --black: #000;
+   --blue: #3498db;
+    --gray: #bdc3c7;
+    --light-blue: #ecf0f1;
+    --dark-blue: #2980b9;
+    --color-primary: hsl(314, 70%, 53%);
+    --color-secondary: #2ecc71;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body{
+    background-color: var(--blue);
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    font-size: 1.6rem; /* rem => root element */
+    color: var(--white);
+    margin-bottom: 2rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding:0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.quiz-box {
+    width: 600px;
+    margin: 0 auto;
+    background-color: var(--gray);
+    padding: 10px 50px 50px 50px;
+    border: 3px solid var(--color-primary);
+    border-radius: 5px;
+}
+
+.quiz-box h1 {
+    background-color: var(--color-primary);
+    color: var(--white);
+    font-size: 4rem;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 3px;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+}
