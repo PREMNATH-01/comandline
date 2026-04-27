@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM ADDITIONALS</title>
+</head>
+<body>
+
+    <button id="click-me">Click Me!!</button>
+    <p>You clicked the button <span id="clickcount">0</span> times!</p>
+    <p id="mouse-over"></p>
+
+    <script>
+        let count = 0;
+        var btn = document.getElementById("click-me");
+        var span = document.getElementById("clickcount");
+        var mouseover = document.getElementById("mouse-over");
+
+        btn.addEventListener("click", function() {
+            count++;
+            span.textContent = count;
+        });
+
+        btn.addEventListener("mouseover", function() {
+            mouseover.textContent = "Mouse is over the button!";
+        });
+
+        btn.addEventListener("mouseout", function() {
+            mouseover.textContent = "";
+        });
+    </script>
+
+    
+</body>
+</html>

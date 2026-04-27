@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <button id="btn">Add More</button>
+    <ul id="list"></ul>
+    <div id="div"></div>
+
+    <script>
+        var btn = document.getElementById("btn");
+        var list = document.getElementById("list");
+        var div = document.getElementById("div");
+
+        btn.addEventListener("click", function() {
+            var li = document.createElement("li");
+            li.textContent = "New Item";
+            list.appendChild(li);
+
+            var p = document.createElement("p");
+            p.textContent = "This is a new paragraph.";
+            div.appendChild(p);
+        });
+    </script>
+</body>
+</html>
